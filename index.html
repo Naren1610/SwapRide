@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapRide - One App for all your travel plans</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">SwapRide</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#careers">Careers</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>One App for all your travel plans</h1>
+                <p>Revolutionizing the way India commutes with smart, digital solutions for public transportation</p>
+                <button class="cta-button">Download the App</button>
+            </div>
+        </section>
+
+        <section id="features" class="product-info">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/500" alt="SwapRide App Interface">
+            </div>
+            <div class="product-details">
+                <h2>Smart Features for Smart Travel</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Cashless Ticketing</h3>
+                        <p>Fast and secure digital payments for hassle-free travel</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Real-Time Tracking</h3>
+                        <p>Know exactly where your bus is in real-time</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-id-card"></i>
+                        <h3>Digital Passes</h3>
+                        <p>Easy application and renewal for student and women's passes</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-route"></i>
+                        <h3>Multi-Modal Connectivity</h3>
+                        <p>Seamless first and last-mile transportation options</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Who We Are</h2>
+            <p>At Maramungala Technologies, we are dedicated to solving the everyday challenges of commuters through advanced technology and innovation. Founded by Rohith Venkatramulu Maramungala and Narendra Chigili, our company is built on a vision to transform public transportation into a digital-first experience.</p>
+        </section>
+
+        <section id="vision-mission" class="vision-mission">
+            <h2>Our Vision & Mission</h2>
+            <div class="vision-mission-container">
+                <div class="vision-card" data-aos="fade-right">
+                    <h3>
+                        <i class="fas fa-eye"></i>
+                        Our Vision
+                    </h3>
+                    <p>To revolutionize public transportation in India by bridging the gap between public and private transport through digitalization, providing reliable, affordable, accessible and innovative mobility solutions for every commuter.</p>
+                </div>
+                <div class="mission-card" data-aos="fade-left">
+                    <h3>
+                        <i class="fas fa-bullseye"></i>
+                        Our Mission
+                    </h3>
+                    <p>To enhance the daily travel experience through innovative technology, empowering commuters with real time information, cashless transactions, multi-modal connectivity between first and last mile, seamless navigation and integrated transportation services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="careers" class="careers">
+            <h2>Why Work With Us?</h2>
+            <div class="careers-intro">
+                <p>Joining the team at <strong>Maramungala Technologies Private Limited</strong> means becoming an integral part of India's transportation revolution. Together, we're redefining the future of commuting through innovation and collaboration.</p>
+            </div>
+            <div class="careers-grid">
+                <div class="career-card">
+                    <h3>
+                        <i class="fas fa-rocket"></i>
+                        Growth
+                    </h3>
+                    <p>Be part of a transformative journey during the early stages of something impactful. This unique opportunity allows you to grow personally and professionally, as you help shape the future of public transportation.</p>
+                </div>
+                <div class="career-card">
+                    <h3>
+                        <i class="fas fa-graduation-cap"></i>
+                        Continuous Learning
+                    </h3>
+                    <p>At Maramungala Technologies, learning never stops. Every day presents opportunities to acquire new professional skills and life lessons that will empower you to evolve and excel in your career.</p>
+                </div>
+                <div class="career-card">
+                    <h3>
+                        <i class="fas fa-hand-holding-heart"></i>
+                        Meaningful Impact
+                    </h3>
+                    <p>Your work here matters. Every contribution you make will directly influence how millions of people commute daily, creating a significant and lasting impact on public transportation in India.</p>
+                </div>
+                <div class="career-card">
+                    <h3>
+                        <i class="fas fa-balance-scale"></i>
+                        Work-Life Balance
+                    </h3>
+                    <p>We understand the value of balance in life. While we work passionately to achieve our mission, we also encourage our team to prioritize personal well-being and strike a healthy work-life balance.</p>
+                </div>
+            </div>
+            <div class="careers-cta">
+                <p>By joining us, you become a vital part of a dynamic team driving real change, while growing, learning, and thriving in a supportive and innovative environment.</p>
+                <button class="cta-button" id="openJobModal">Join Our Team</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Job Application Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Join Our Team</h2>
+            <form id="jobApplicationForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           pattern="^[A-Za-z\s]{3,50}$"
+                           title="Name should be between 3-50 characters and contain only letters and spaces"
+                           placeholder="Enter your full name"
+                           required>
+                    <div class="validation-message" id="name-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address"
+                           placeholder="Enter your email address"
+                           required>
+                    <div class="validation-message" id="email-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" 
+                              name="message" 
+                              placeholder="Why do you want to join us? (minimum 50 characters)"
+                              required 
+                              minlength="50"></textarea>
+                    <div class="validation-message" id="message-validation"></div>
+                </div>
+                <div class="form-group">
+                    <label for="resume">Resume (PDF, DOC, DOCX, max 5MB)</label>
+                    <div class="file-input-container">
+                        <input type="file" 
+                               id="resume" 
+                               name="resume" 
+                               accept=".pdf,.doc,.docx" 
+                               required>
+                        <div class="file-input-text">Choose Resume File</div>
+                        <div id="file-name" class="file-name"></div>
+                    </div>
+                    <div class="validation-message" id="file-validation"></div>
+                </div>
+                <button type="submit" class="submit-button">Send Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: Sales@maratech.in</p>
+                <p>Phone: +91 90637 76655</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <p>Maramungala Technologies Private Limited</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SwapRide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
