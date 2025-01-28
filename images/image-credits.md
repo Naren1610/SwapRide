@@ -8,28 +8,36 @@ All images are sourced from Unsplash.com and are free to use under the Unsplash 
   - Credit: Unsplash
 
 ## Features Section
-- Digital Payment: https://images.unsplash.com/photo-1556742049-0cfed4f6a45d
+All illustrations are from unDraw (https://undraw.co) - Open source illustrations
+
+- App Interface: mobile_app_interface
+  - Description: Mobile app interface illustration
+  - Credit: unDraw
+
+- Digital Payment: mobile_payments
   - Description: Mobile payment illustration
-  - Credit: Unsplash
+  - Credit: unDraw
 
-- Real-time Tracking: https://images.unsplash.com/photo-1581362072978-14998d01fdaa
-  - Description: GPS tracking map
-  - Credit: Unsplash
+- Real-time Tracking: location_tracking
+  - Description: GPS tracking illustration
+  - Credit: unDraw
 
-- Digital Pass: https://images.unsplash.com/photo-1621768216002-5ac171876625
-  - Description: Digital ticket interface
-  - Credit: Unsplash
+- Digital Pass: mobile_ticket
+  - Description: Digital ticket illustration
+  - Credit: unDraw
 
-- Multi-Modal: https://images.unsplash.com/photo-1574589392635-4429c7aa3c75
-  - Description: Connected transportation
-  - Credit: Unsplash
+- Multi-Modal: connected_world
+  - Description: Connected world illustration
+  - Credit: unDraw
 
 ## About Section
-- Team: https://images.unsplash.com/photo-1522071820081-009f0129c71c
-  - Description: Professional team
-  - Credit: Unsplash
+- Team: team_collaboration
+  - Description: Team collaboration illustration
+  - Credit: unDraw
 
 ## Background Images
 - Pattern: https://images.unsplash.com/photo-1557683316-973673baf926
   - Description: Abstract pattern
   - Credit: Unsplash
+
+All illustrations from unDraw are free to use and don't require attribution, but we've included credits as a best practice.
