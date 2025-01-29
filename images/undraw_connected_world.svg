@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- World map outline -->
+    <ellipse cx="400" cy="300" rx="250" ry="250" fill="#E6E6E6"/>
+    
+    <!-- Connection points -->
+    <circle cx="300" cy="200" r="10" fill="#007FFF"/>
+    <circle cx="500" cy="250" r="10" fill="#007FFF"/>
+    <circle cx="400" cy="400" r="10" fill="#007FFF"/>
+    <circle cx="600" cy="350" r="10" fill="#007FFF"/>
+    <circle cx="200" cy="350" r="10" fill="#007FFF"/>
+    
+    <!-- Connection lines -->
+    <path d="M300 200L500 250" stroke="#007FFF" stroke-width="2"/>
+    <path d="M500 250L400 400" stroke="#007FFF" stroke-width="2"/>
+    <path d="M400 400L600 350" stroke="#007FFF" stroke-width="2"/>
+    <path d="M400 400L200 350" stroke="#007FFF" stroke-width="2"/>
+    
+    <!-- Transportation icons -->
+    <rect x="280" y="180" width="40" height="20" rx="10" fill="#007FFF"/>
+    <rect x="480" y="230" width="40" height="20" rx="10" fill="#007FFF"/>
+    <rect x="380" y="380" width="40" height="20" rx="10" fill="#007FFF"/>
+    <rect x="580" y="330" width="40" height="20" rx="10" fill="#007FFF"/>
+    <rect x="180" y="330" width="40" height="20" rx="10" fill="#007FFF"/>
+</svg>
