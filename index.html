@@ -6,6 +6,7 @@
     <title>SwapRide - One App for all your travel plans</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -204,12 +205,12 @@
                     <div class="validation-message" id="message-validation"></div>
                 </div>
                 <div class="form-group">
-                    <label for="resume">Resume (PDF, DOC, DOCX, max 5MB)</label>
+                    <label for="resume">Resume (DOC, DOCX, max 50Kb)</label>
                     <div class="file-input-container">
                         <input type="file" 
                                id="resume" 
                                name="resume" 
-                               accept=".pdf,.doc,.docx" 
+                               accept=".doc,.docx" 
                                required>
                         <div class="file-input-text">Choose Resume File</div>
                         <div id="file-name" class="file-name"></div>
@@ -225,7 +226,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Contact Us</h4>
-                <p>Email: Sales@maratech.in</p>
+                <p>Email: Rohith@maratech.in</p>
                 <p>Phone: +91 90637 76655</p>
             </div>
             <div class="footer-section">
@@ -246,6 +247,14 @@
         </div>
     </footer>
 
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("t1Q4kRO2BxSyyHKjj");
+            window.onload = function() {
+                console.log('EmailJS initialized successfully');
+            }
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

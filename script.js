@@ -145,14 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle file selection with validation
     fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
-        const allowedTypes = ['.pdf', '.doc', '.docx'];
-        const maxSize = 5 * 1024 * 1024; // 5MB
+        const allowedTypes = ['.doc', '.docx'];
+        const maxSize = 50 * 1024; // 50KB
 
         if (file) {
             const extension = '.' + file.name.split('.').pop().toLowerCase();
             
             if (!allowedTypes.includes(extension)) {
-                fileValidation.textContent = 'Please upload a PDF, DOC, or DOCX file';
+                fileValidation.textContent = 'Please upload a DOC or DOCX file';
                 fileValidation.className = 'validation-message error';
                 fileInput.value = '';
                 fileName.textContent = '';
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (file.size > maxSize) {
-                fileValidation.textContent = 'File size should be less than 5MB';
+                fileValidation.textContent = 'File size must be less than 50KB. Please compress your file or choose a smaller one.';
                 fileValidation.className = 'validation-message error';
                 fileInput.value = '';
                 fileName.textContent = '';
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayName = displayName.substring(0, maxLength - extension.length - 3) + '...' + extension;
             }
             fileName.textContent = displayName;
-            fileInputText.textContent = 'File Selected ';
+            fileInputText.textContent = 'File Selected';
             fileInputText.style.backgroundColor = '#28a745';
             fileValidation.textContent = 'Valid file selected';
             fileValidation.className = 'validation-message success';
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle form submission with validation
-    jobForm.addEventListener('submit', (e) => {
+    jobForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Check all required fields
@@ -238,22 +238,57 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Create email content with proper encoding
-        const subject = encodeURIComponent(`Job Application from ${name}`);
-        const body = encodeURIComponent(
-            `Name: ${name}\n` +
-            `Email: ${email}\n\n` +
-            `Message:\n${message}`
-        );
+        try {
+            // Convert file to base64
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            
+            reader.onload = function() {
+                const fileData = reader.result.split(',')[1]; // Get base64 data
 
-        // Open email client
-        window.location.href = `mailto:Sales@maratech.in?subject=${subject}&body=${body}`;
+                // Prepare template parameters
+                const templateParams = {
+                    to_email: 'narendra@maratech.in',
+                    from_name: name,
+                    from_email: email,
+                    message: message,
+                    resume: fileData,
+                    resume_name: file.name
+                };
 
-        // Show success message
-        alert('Thank you for your application! Please complete sending the email with your resume attached.');
+                console.log('Attempting to send email...');
 
-        // Close modal and reset form
-        closeModal();
+                // Send email using EmailJS
+                emailjs.send('service_mxkarrh', 'template_dzz6rgb', templateParams)
+                    .then(function(response) {
+                        console.log('Email sent successfully:', response);
+                        alert('Thank you for your application! We will get back to you soon.');
+                        closeModal();
+                    })
+                    .catch(function(error) {
+                        console.error('Email error:', error);
+                        let errorMessage = 'Sorry, there was an error sending your application: ';
+                        
+                        if (error.message.includes('file size')) {
+                            errorMessage += 'The resume file is too large. Please use a file smaller than 50KB.';
+                        } else if (error.message.includes('network')) {
+                            errorMessage += 'Please check your internet connection and try again.';
+                        } else {
+                            errorMessage += 'Please try again later or contact support if the issue persists.';
+                        }
+                        
+                        alert(errorMessage);
+                    });
+            };
+
+            reader.onerror = function() {
+                console.error('Error reading file');
+                alert('Error processing your resume. Please try again.');
+            };
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Sorry, there was an error processing your application. Please try again later.');
+        }
     });
 });
 
